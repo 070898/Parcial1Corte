@@ -28,16 +28,20 @@ public class Sequences {
 		else 
 			return Nucleotide() + sequence(num-1);
 	}
-	//Funcion que retorna un número aleatorio 1-1000
+	//Funcion que genera "chr" + numero random
 	public static String Chromosome()
 	{
 		Random rd = new Random();
 		return "chr" + (rd.nextInt(23) + 1);
 	}
-	//Funcion que crea el archivo . txt
-	public static void createFile()
+	//Funcion que retorna un numero aleatorio 1-1000
+	public static int inicio(int ri)
 	{
-		
+		return ri;
+	}
+	//Funcion que crea el archivo . txt
+	public static void createFile() 
+	{
 		
 			FileWrite file = new FileWriter("sequence.txt"); //Escritor del archivo
 			BufferedWriter bw = new BufferedWriter(file); // Buffer del escritor
@@ -56,8 +60,11 @@ public class Sequences {
 				}
 				bw.flush(); //Guarda la secuencia
 			}
-			catch (Expetion ex) {}
+			catch (Exception ex) {}
 	}
-	
-	
+	public static void main(String[] args)
+	{
+		Sequences cs = new Sequences();
+		System.out.println(cs);
+	}
 }
